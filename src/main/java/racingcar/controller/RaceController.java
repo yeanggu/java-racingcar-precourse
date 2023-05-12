@@ -18,6 +18,7 @@ public class RaceController {
     // 레이스를 시작하기 위한 입력 흐름
     public void startRace() {
         raceService.inputRaceName();
+        raceService.inputRaceCount();
     }
     
     

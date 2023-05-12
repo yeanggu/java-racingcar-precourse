@@ -18,5 +18,11 @@ public class RaceService {
         // TODO : 예외 처리
     }
 
-
+    // 경주를 진행할 횟수를 입력받는다.
+    public void inputRaceCount() {
+        raceView.inputCountMessage();
+        String input = Console.readLine();
+        // TODO : 예외 처리
+        raceView.lineBreak();
+    }
 }
