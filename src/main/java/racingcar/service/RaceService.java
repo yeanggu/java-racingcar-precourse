@@ -47,10 +47,17 @@ public class RaceService {
     public void racingResult() {
         raceView.raceResultMessage();
         do {
+            racingCarResult();
             raceView.lineBreak();
             count --;
         } while (count != 0);
     }
 
-
+    // 각 car 객체의 레이싱 결과를 나타내는 기능
+    public void racingCarResult() {
+        for (Car car : cars) {
+            raceView.raceResult(car);
+            raceView.lineBreak();
+        }
+    }
 }

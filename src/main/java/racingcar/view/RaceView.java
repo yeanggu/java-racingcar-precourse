@@ -29,7 +29,14 @@ public class RaceView {
         System.out.println(RaceMessage.RACE_RESULT_MESSAGE);
     }
 
-
+    // 회차별 레이스 결과
+    public void raceResult(Car car) {
+        System.out.print(car.getCarName());
+        System.out.print(RaceMessage.RESULT_SIGN);
+        for (int i = 0 ; i < car.getPosition() ; i++) {
+            System.out.print(RaceMessage.RACE_SIGN);
+        }
+    }
 
 
 }

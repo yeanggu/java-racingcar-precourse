@@ -17,4 +17,9 @@ public class Car {
     public int getPosition() {
         return position;
     }
+
+    // 자동차 이름을 리턴하는 메서드
+    public String getCarName() {
+        return name;
+    }
 }
