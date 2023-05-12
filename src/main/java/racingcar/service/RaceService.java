@@ -2,6 +2,7 @@ package racingcar.service;
 
 import camp.nextstep.edu.missionutils.Console;
 import racingcar.Car;
+import racingcar.domain.PositionCompare;
 import racingcar.domain.Racing;
 import racingcar.view.RaceView;
 
@@ -13,12 +14,14 @@ public class RaceService {
 
     private RaceView raceView;
     private Racing racing;
+    private PositionCompare positionCompare;
     private ArrayList<Car> cars = new ArrayList<>();
     private int count = 0;
 
     public RaceService() {
         this.raceView = new RaceView();
         this.racing = new Racing();
+        this.positionCompare = new PositionCompare();
     }
 
     // 경주할 자동차의 이름을 입력받는다.
@@ -63,5 +66,15 @@ public class RaceService {
             raceView.raceResult(car);
             raceView.lineBreak();
         }
+    }
+
+    // 레이스 최종 결과
+    public void raceWinnerResult() {
+        raceView.raceWinnerResult(compareWinner());
+    }
+
+    // winnerList 를 추출하는 기능
+    public List<Car> compareWinner() {
+        return positionCompare.winnerListGenerate(cars);
     }
 }

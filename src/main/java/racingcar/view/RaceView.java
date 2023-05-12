@@ -4,10 +4,12 @@ import racingcar.Car;
 import racingcar.message.RaceMessage;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class RaceView {
 
-    public RaceView() {};
+    public RaceView() {}
 
     // 자동차 이름 입력 요청 메시지
     public void inputNameMessage() {
@@ -38,5 +40,17 @@ public class RaceView {
         }
     }
 
+    // 레이스 최종 결과
+    public void raceWinnerResult(List<Car> cars) {
+        System.out.print(RaceMessage.RACE_WINNER_RESULT);
+        int count = 0;
+        for (Car car : cars) {
+            System.out.print(car.getCarName());
+            count++;
+            if (count < cars.size()) {
+                System.out.print(", ");
+            }
+        }
+    }
 
 }

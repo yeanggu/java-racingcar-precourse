@@ -20,11 +20,17 @@ public class RaceController {
         raceService.inputRaceName();
         raceService.inputRaceCount();
         racing();
+        raceWinnerResult();
     }
 
     // 레이스를 진행하는 흐름
     public void racing() {
         raceService.racingResult();
+    }
+
+    // 레이스를 종료하는 흐름
+    public void raceWinnerResult() {
+        raceService.raceWinnerResult();
     }
     
     
