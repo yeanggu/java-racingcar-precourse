@@ -19,6 +19,12 @@ public class RaceController {
     public void startRace() {
         raceService.inputRaceName();
         raceService.inputRaceCount();
+        racing();
+    }
+
+    // 레이스를 진행하는 흐름
+    public void racing() {
+        raceService.racingResult();
     }
     
     

@@ -1,6 +1,9 @@
 package racingcar.view;
 
+import racingcar.Car;
 import racingcar.message.RaceMessage;
+
+import java.util.ArrayList;
 
 public class RaceView {
 
@@ -20,6 +23,13 @@ public class RaceView {
     public void lineBreak() {
         System.out.println();
     }
+
+    // 실행 결과 메시지
+    public void raceResultMessage() {
+        System.out.println(RaceMessage.RACE_RESULT_MESSAGE);
+    }
+
+
 
 
 }

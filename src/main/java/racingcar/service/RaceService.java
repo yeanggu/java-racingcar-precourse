@@ -12,6 +12,7 @@ public class RaceService {
 
     private RaceView raceView;
     private ArrayList<Car> cars = new ArrayList<>();
+    private int count = 0;
 
     public RaceService() {
         this.raceView = new RaceView();
@@ -38,7 +39,17 @@ public class RaceService {
         raceView.inputCountMessage();
         String input = Console.readLine();
         // TODO : 예외 처리
+        count = Integer.parseInt(input);
         raceView.lineBreak();
+    }
+
+    // 입력된 횟수만큼 레이싱을 반복하는 기능
+    public void racingResult() {
+        raceView.raceResultMessage();
+        do {
+            raceView.lineBreak();
+            count --;
+        } while (count != 0);
     }
 
 
