@@ -2,6 +2,7 @@ package racingcar.service;
 
 import camp.nextstep.edu.missionutils.Console;
 import racingcar.Car;
+import racingcar.domain.Racing;
 import racingcar.view.RaceView;
 
 import java.util.ArrayList;
@@ -11,11 +12,13 @@ import java.util.List;
 public class RaceService {
 
     private RaceView raceView;
+    private Racing racing;
     private ArrayList<Car> cars = new ArrayList<>();
     private int count = 0;
 
     public RaceService() {
         this.raceView = new RaceView();
+        this.racing = new Racing();
     }
 
     // 경주할 자동차의 이름을 입력받는다.
@@ -56,6 +59,7 @@ public class RaceService {
     // 각 car 객체의 레이싱 결과를 나타내는 기능
     public void racingCarResult() {
         for (Car car : cars) {
+            racing.racingCar(car);
             raceView.raceResult(car);
             raceView.lineBreak();
         }
