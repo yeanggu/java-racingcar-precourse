@@ -8,5 +8,13 @@ public class Car {
         this.name = name;
     }
 
-    // 추가 기능 구현
+    // 현재 포지션에서 한칸 전진하는 메서드
+    public void plusPosition() {
+        position += 1;
+    }
+
+    // 포지션 현황을 리턴하는 메서드
+    public int getPosition() {
+        return position;
+    }
 }
