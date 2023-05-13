@@ -4,6 +4,7 @@ import camp.nextstep.edu.missionutils.Console;
 import racingcar.Car;
 import racingcar.domain.PositionCompare;
 import racingcar.domain.Racing;
+import racingcar.exception.RaceInputException;
 import racingcar.view.RaceView;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ public class RaceService {
     private RaceView raceView;
     private Racing racing;
     private PositionCompare positionCompare;
+    private RaceInputException exception;
     private ArrayList<Car> cars = new ArrayList<>();
     private int count = 0;
 
@@ -22,13 +24,14 @@ public class RaceService {
         this.raceView = new RaceView();
         this.racing = new Racing();
         this.positionCompare = new PositionCompare();
+        this.exception = new RaceInputException();
     }
 
     // 경주할 자동차의 이름을 입력받는다.
     public void inputRaceName() {
         raceView.inputNameMessage();
         String input = Console.readLine();
-        // TODO : 예외 처리
+        exception.validCarName(input);
         newCars(input);
     }
 
@@ -44,7 +47,7 @@ public class RaceService {
     public void inputRaceCount() {
         raceView.inputCountMessage();
         String input = Console.readLine();
-        // TODO : 예외 처리
+        exception.validRaceCount(input);
         count = Integer.parseInt(input);
         raceView.lineBreak();
     }
